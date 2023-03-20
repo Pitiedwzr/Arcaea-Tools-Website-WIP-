@@ -5,64 +5,150 @@
     <link rel="shortcut icon" type="image/.png" href="./img/Partner_hikari_fatalis.png" />
     <link rel="stylesheet" href="./css/icon.css">
     <link rel="stylesheet" href="./css/material.orange-amber.min.css">
-    <link rel="stylesheet" herf="./css/style.css">
-    <script src="./css/material.min.js"></script>
+    <script src="./js/material.min.js"></script>
+    <!--Slide-->
+    <link rel="stylesheet" href="./css/slide.css">
+    <!--Slide End-->
     <title>Arcaea Tools-WIP</title>
 </head>
 
 <body>
-<!-- Uses a header that scrolls with the text, rather than staying
-  locked at the top -->
-<div class="mdl-layout mdl-js-layout">
-  <header class="mdl-layout__header mdl-layout__header--scroll">
-    <div class="mdl-layout__header-row">
-      <!-- Title -->
-      <span class="mdl-layout-title">Arcaea Tools (WIP) - Home</span>
-      <!-- Add spacer, to align navigation to the right -->
-      <div class="mdl-layout-spacer"></div>
-      <!-- Navigation -->
-      <nav class="mdl-navigation mdl-layout--large-screen-only">
-          <a class="mdl-navigation__link" href="index.html">HOME</a>
-          <a class="mdl-navigation__link" href="event.html">EVENT</a>
-          <button class="mdl-button mdl-js-button" style="color: #5c4d39" id="more-button">
-              Calculator
-          </button>
-          <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button">
-              <li class="mdl-menu__item"><a class="mdl-navigation__link" style="color:black" href="calcharalevel.html">Character Level</a></li>
-              <li class="mdl-menu__item"><a class="mdl-navigation__link" style="color:black" href="caleventfinish.html">Event Finish Day</a></li>
-          </ul>
-          <a class="mdl-navigation__link" href="blog.html">BLOG</a>
-      </nav>
+    <!-- Uses a header that scrolls with the text, rather than staying
+      locked at the top -->
+    <div class="mdl-layout mdl-js-layout">
+        <header class="mdl-layout__header mdl-layout__header--scroll">
+            <div class="mdl-layout__header-row">
+                <!-- Title -->
+                <span class="mdl-layout-title">Arcaea Tools (WIP) - Home</span>
+                <!-- Add spacer, to align navigation to the right -->
+                <div class="mdl-layout-spacer"></div>
+                <!-- Navigation -->
+                <nav class="mdl-navigation mdl-layout--large-screen-only">
+                    <a class="mdl-navigation__link" href="index.html">HOME</a>
+                    <a class="mdl-navigation__link" href="event.html">EVENT</a>
+                    <button class="mdl-button mdl-js-button" style="color: #5c4d39" id="more-button">
+                        Calculator
+                    </button>
+                    <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button">
+                        <li class="mdl-menu__item"><a class="mdl-navigation__link" style="color:black" href="calcharalevel.html">Character Level</a></li>
+                        <li class="mdl-menu__item"><a class="mdl-navigation__link" style="color:black" href="caleventfinish.html">Event Finish Day</a></li>
+                    </ul>
+                    <a class="mdl-navigation__link" href="blog.html">BLOG</a>
+                </nav>
+            </div>
+        </header>
+        <!-- Side navigation -->
+        <div class="sidenav-drawer mdl-layout__drawer">
+            <span class="mdl-layout-title">Arcaea Tools</span>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="index.html">Home</a>
+                <a class="mdl-navigation__link" href="event.html">Event</a>
+                <div style="height: 1px; background-color: #dcdcdc; margin: 8px 0;"></div>
+                <span class="mdl-navigation__link" style="color: #ff9800;">Calculator</span>
+                <a class="mdl-navigation__link" href="calcharalevel.html">Character Level</a>
+                <a class="mdl-navigation__link" href="caleventfinish.html">Event Finish Day</a>
+                <div style="height: 1px; background-color: #dcdcdc; margin: 8px 0;"></div>
+                <a class="mdl-navigation__link" href="blog.html">Blog</a>
+            </nav>
+        </div>
+
+
+        <br>
+        <br>
+        <br>
+        <main class="mdl-layout__content">
+            <div class="page-content">
+                <!-- Page contect start -->
+                <!-- Slide start -->
+                <div class="slideshow-container">
+                    <div class="Slides fade">
+                        <div class="numbercount">1 / 6</div>
+                        <img src="./img/ArcaeaXChunithmSun.jpg" style="width:100%" />
+                        <div class="text">Arcaea X CHUNITHM SUN</div>
+                    </div>
+                    <div class="Slides fade">
+                        <div class="numbercount">2 / 6</div>
+                        <img src="./img/ArcaeaxCHUNITHM.jpg" style="width:100%" />
+                        <div class="text">CHUNITHM Collaboration</div>
+                    </div>
+                    <div class="Slides fade">
+                        <div class="numbercount">3 / 6</div>
+                        <img src="./img/MithraTercera.jpg" style="width:100%" />
+                        <!--<div class="text">New Partner: Mithra Tercera</div>-->
+                    </div>
+                    <div class="Slides fade">
+                        <div class="numbercount">4 / 6</div>
+                        <img src="./img/ToaKozukata.jpg" style="width:100%" />
+                        <!--<div class="text">New Partner: Toa Kozukata</div>-->
+                    </div>
+                    <div class="Slides fade">
+                        <div class="numbercount">5 / 6</div>
+                        <img src="./img/CHUNITHMReturn.jpg" style="width:100%" />
+                        <!--<div class="text">CHUNITHM Partner Return</div>-->
+                    </div>
+                    <div class="Slides fade">
+                        <div class="numbercount">6 / 6</div>
+                        <img src="./img/NSOnsale.jpg" style="width:100%" />
+                        <div class="text">NS Arcaea on sale NOW</div>
+                    </div>
+                    <!--
+                <div class="Slides fade">
+                 <div class="numbercount">1 / </div>
+                 <img src="./img/" style="width:100%" />
+                 <div class="text"></div>
+                            -->
+                    <a class="prev" onclick="plusSlides(-1)">❮</a>
+                    <a class="next" onclick="plusSlides(1)">❯</a>
+                </div>
+            </div>
+            <br>
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+                <span class="dot" onclick="currentSlide(6)"></span>
+            </div>
+            <script>
+                let slideIndex = 1;
+                showSlides(slideIndex);
+
+                function plusSlides(n) {
+                    showSlides(slideIndex += n);
+                }
+
+                function currentSlide(n) {
+                    showSlides(slideIndex = n);
+                }
+
+                function showSlides(n) {
+                    let i;
+                    let slides = document.getElementsByClassName("Slides");
+                    let dots = document.getElementsByClassName("dot");
+                    if (n > slides.length) { slideIndex = 1 }
+                    if (n < 1) { slideIndex = slides.length }
+                    for (i = 0; i < slides.length; i++) {
+                        slides[i].style.display = "none";
+                    }
+                    for (i = 0; i < dots.length; i++) {
+                        dots[i].className = dots[i].className.replace(" active", "");
+                    }
+                    slides[slideIndex - 1].style.display = "block";
+                    dots[slideIndex - 1].className += " active";
+                }
+            </script>
+            <!--Slide end-->
+
+
+            <div style="text-align: center;">
+                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                    Test Button style
+                </button>
+            </div>
     </div>
-  </header>
-  <!-- Side navigation -->
-  <div class="sidenav-drawer mdl-layout__drawer">
-    <span class="mdl-layout-title">Arcaea Tools</span>
-    <nav class="mdl-navigation">
-        <a class="mdl-navigation__link" href="index.html">Home</a>
-        <a class="mdl-navigation__link" href="event.html">Event</a>
-        <div style="height: 1px; background-color: #dcdcdc; margin: 8px 0;"></div>
-        <span class="mdl-navigation__link" style="color: #ff9800;">Calculator</span>
-        <a class="mdl-navigation__link" href="calcharalevel.html">Character Level</a>
-        <a class="mdl-navigation__link" href="caleventfinish.html">Event Finish Day</a>
-        <div style="height: 1px; background-color: #dcdcdc; margin: 8px 0;"></div>
-        <a class="mdl-navigation__link" href="blog.html">Blog</a>
-    </nav>
-  </div>
-  <main class="mdl-layout__content">
-      <div class="page-content">
-          <!-- Page contect start -->
-          <div style="background-image: url('./img/6YearAnniversary.jpg');
-  background-size: cover; height:680px; padding-top:80px;">
-          </div>
-          <div style="text-align: center;">
-              <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-                  Test Button style
-              </button>
-          </div>
-      </div>
-  </main>
-</div>
+    </main>
+    </div>
 
 
 </body>
