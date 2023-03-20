@@ -6,7 +6,7 @@ A arcaea tools website *(STILL WORK IN PROGRESS)*, will incluud:
 
 Now work in progress:
 - ~~Basic sturctures~~
-- Home page
-- Event page
-- Calculator page
+- Home page( ~~slides~~, news, calendar)
+- Event page(calendar, news)
+- Calculator page(Character Level Calculate, Event Finish Day Calculate)
 - Blog page
