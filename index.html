@@ -6,21 +6,16 @@
     <link rel="stylesheet" href="./css/icon.css">
     <link rel="stylesheet" href="./css/material.orange-amber.min.css">
     <script src="./js/material.min.js"></script>
-    <!--Slide-->
     <link rel="stylesheet" href="./css/slide.css">
-    <!--Slide End-->
+    <link rel="stylesheet" href="./css/style.css">
     <title>Arcaea Tools-WIP</title>
 </head>
 
 <body>
-    <!-- Uses a header that scrolls with the text, rather than staying
-      locked at the top -->
     <div class="mdl-layout mdl-js-layout">
         <header class="mdl-layout__header mdl-layout__header--scroll">
             <div class="mdl-layout__header-row">
-                <!-- Title -->
                 <span class="mdl-layout-title">Arcaea Tools (WIP) - Home</span>
-                <!-- Add spacer, to align navigation to the right -->
                 <div class="mdl-layout-spacer"></div>
                 <!-- Navigation -->
                 <nav class="mdl-navigation mdl-layout--large-screen-only">
@@ -51,16 +46,15 @@
                 <a class="mdl-navigation__link" href="blog.html">Blog</a>
             </nav>
         </div>
-
-
+        <!--Make more space between navigation and content-->
         <br>
         <br>
         <br>
         <main class="mdl-layout__content">
             <div class="page-content">
-                <!-- Page contect start -->
+                <!-- Page content start -->
                 <!-- Slide start -->
-                <div class="slideshow-container">
+                <div class="slideshow-container mdl-shadow--6dp">
                     <div class="Slides fade">
                         <div class="numbercount">1 / 6</div>
                         <img src="./img/ArcaeaXChunithmSun.jpg" style="width:100%" />
@@ -92,11 +86,13 @@
                         <div class="text">NS Arcaea on sale NOW</div>
                     </div>
                     <!--
-                <div class="Slides fade">
-                 <div class="numbercount">1 / </div>
-                 <img src="./img/" style="width:100%" />
-                 <div class="text"></div>
-                            -->
+                        A Silde example
+                     <div class="Slides fade">
+                      <div class="numbercount">1 / </div>
+                      <img src="./img/" style="width:100%" />
+                      <div class="text">
+                     </div>
+                        -->
                     <a class="prev" onclick="plusSlides(-1)">❮</a>
                     <a class="next" onclick="plusSlides(1)">❯</a>
                 </div>
@@ -139,16 +135,63 @@
                 }
             </script>
             <!--Slide end-->
+            <div class="wrapper">
+                <div class="mdl-grid">
+                    <!--News Card-->
+                    <!--Control the news card picture-->
+                    <style>
+                        .news-card-square > .mdl-card__title {
+                            color: #fff;
+                            background: url('./img/ArcaeaXChunithmSun.jpg') center / cover #ff9800;
+                        }
+                    </style>
+
+                    <div class="news-card-square mdl-card mdl-shadow--4dp">
+                        <div class="mdl-card__title mdl-card--expand">
+                            <h2 class="mdl-card__title-text"></h2>
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                            Arcaea x CHUNITHM SUN
+                            New Collaboration and partner will join arcaea.
+                        </div>
+                        <div class="mdl-card__actions mdl-card--border">
+                            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="https://www.bilibili.com/opus/774949539356344328?spm_id_from=333.999.0.0" target="_blank">
+                                View more detail
+                            </a>
+                        </div>
+                    </div>
+                    <!--News Card End-->
 
 
-            <div style="text-align: center;">
-                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-                    Test Button style
-                </button>
+
+                    <!--End day card start-->
+                    <style>
+                        
+                    </style>
+
+                    <div class="event-end-card mdl-card mdl-shadow--4dp">
+                        <div class="mdl-card__title mdl-card--expand">
+                            <h4>
+                                CHUNITHM Limit Partner<br>
+                                Event End Day:<br>
+                                April 27, 2023
+                            </h4>
+                        </div>
+                        <div class="mdl-card__actions mdl-card--border">
+                            <!--
+                 <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                  Add to Calendar
+                 </a>
+                -->
+                            <div class="mdl-layout-spacer"></div>
+                            <i class="material-icons">event</i>
+                        </div>
+                    </div>
+                    <!--End day card end-->
+                </div>
             </div>
-    </div>
+</div>
+<!--Page content end-->
     </main>
     </div>
-
-
 </body>
