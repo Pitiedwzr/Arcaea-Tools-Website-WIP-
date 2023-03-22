@@ -1,31 +1,26 @@
 <!DOCTYPE html>
+<html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
     <link rel="shortcut icon" type="image/.png" href="./img/Partner_hikari_fatalis.png" />
-    <link rel="stylesheet" href="./css/icon.css">
-    <link rel="stylesheet" href="./css/material.orange-amber.min.css">
+    <link rel="stylesheet" href="./css/icon.css" />
+    <link rel="stylesheet" href="./css/material.orange-amber.min.css" />
     <script src="./js/material.min.js"></script>
     <title>Arcaea Tools-WIP</title>
 </head>
-
 <body>
-    <!-- Uses a header that scrolls with the text, rather than staying
-      locked at the top -->
     <div class="mdl-layout mdl-js-layout">
         <header class="mdl-layout__header mdl-layout__header--scroll">
             <div class="mdl-layout__header-row">
                 <!-- Title -->
                 <span class="mdl-layout-title">Arcaea Tools (WIP) - Event Finish Day Calculator</span>
-                <!-- Add spacer, to align navigation to the right -->
                 <div class="mdl-layout-spacer"></div>
                 <!-- Navigation -->
                 <nav class="mdl-navigation mdl-layout--large-screen-only">
                     <a class="mdl-navigation__link" href="index.html">HOME</a>
                     <a class="mdl-navigation__link" href="event.html">EVENT</a>
-                    <button class="mdl-button mdl-js-button" style="color: #5c4d39 " id="more-button">
-                        Calculator
-                    </button>
+                    <button class="mdl-button mdl-js-button" style="color: #5c4d39 " id="more-button"> Calculator </button>
                     <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button">
                         <li class="mdl-menu__item"><a class="mdl-navigation__link" style="color:black" href="calcharalevel.html">Character Level</a></li>
                         <li class="mdl-menu__item"><a class="mdl-navigation__link" style="color:black" href="caleventfinish.html">Event Finish Day</a></li>
@@ -51,17 +46,75 @@
         <main class="mdl-layout__content">
             <div class="page-content">
                 <!-- Page contect start -->
-                <div style="background-image: url('./img/6YearAnniversary.jpg');
-  background-size: cover; height:680px; padding-top:80px;">
-                </div>
-                <div style="text-align: center;">
-                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-                        Test Button style
-                    </button>
+                <br />
+                <br />
+                <div class="mdl-shadow--4dp" style="width: 450px; text-align: center; margin-left: auto; margin-right: auto;">
+                    <br />
+                    <br />
+                    <span class="mdl-layout-title">Event Finish Day Calculator</span>
+                    <form action="#">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="playtimes" />
+                            <label class="mdl-textfield__label" for="playtimes">Play Times(per day)</label>
+                            <span class="mdl-textfield__error">Input is not a number!</span>
+                        </div>
+                        <br />
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="totalstep" />
+                            <label class="mdl-textfield__label" for="totalstep">Map Total Step</label>
+                            <span class="mdl-textfield__error">Input is not a number!</span>
+                        </div>
+                        <br />
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="score" />
+                            <label class="mdl-textfield__label" for="score">Score</label>
+                            <span class="mdl-textfield__error">Input is not a number!</span>
+                        </div>
+                        <br />
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="constant" />
+                            <label class="mdl-textfield__label" for="constant">Chart Constant</label>
+                            <span class="mdl-textfield__error">Input is not a number!</span>
+                        </div>
+                        <br />
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="step" />
+                            <label class="mdl-textfield__label" for="step">Partner STEP Stat</label>
+                            <span class="mdl-textfield__error">Input is not a number!</span>
+                        </div>
+                    </form>
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="button" onclick="calculateevent()"> Calculate </button>
+                    <script>
+                        function calculateevent() {
+                            var singelptt = 0;
+                            var finalstep = 0;
+                            var days = 0;
+                            var ts = Number(document.getElementById("totalstep").value);
+                            var score = Number(document.getElementById("score").value);
+                            var constant = Number(document.getElementById("constant").value);
+                            var step = Number(document.getElementById("step").value);
+                            var playtimes = Number(document.getElementById("playtimes").value);
+                            if (score >= 10000000) singelptt = constant + 2;
+                            else if (score > 9800000) singelptt = constant + 1 + (score - 9800000) / 200000;
+                            else singelptt = constant + (score - 9500000) / 300000;
+                            if (singelptt < 0) singelptt = 0;
+                            finalstep = (2.45 * Math.sqrt(singelptt) + 2.5) * (step / 50);
+                            days = ts / (playtimes * finalstep);
+                            document.getElementById("days").innerHTML = Math.ceil(days);
+                        }
+                    </script>
+                    <div>
+                        <br />
+                        <br />
+                        <br />
+                        <span>You can finish event in <span id="days">___</span> days</span>
+                    </div>
+                    <br />
+                    <br />
+                    <br />
                 </div>
             </div>
         </main>
     </div>
-
-
 </body>
+</html>

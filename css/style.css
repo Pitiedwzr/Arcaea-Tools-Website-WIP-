@@ -42,3 +42,7 @@
     .event-end-card > .mdl-card__actions > .mdl-button {
         color: #fff;
     }
+event-table {
+    margin-right: 200px;
+    margin-left: 0px;
+}
