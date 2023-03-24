@@ -16,7 +16,7 @@
         <header class="mdl-layout__header mdl-layout__header--scroll">
             <div class="mdl-layout__header-row">
                 <!-- Title -->
-                <span class="mdl-layout-title">Arcaea Tools (WIP) - Character Level Calculator</span>
+                <span class="mdl-layout-title">Arcaea Tools (WIP) - Partner Level Calculator</span>
                 <!-- Add spacer, to align navigation to the right -->
                 <div class="mdl-layout-spacer"></div>
                 <!-- Navigation -->
@@ -27,7 +27,7 @@
                         Calculator
                     </button>
                     <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button">
-                        <li class="mdl-menu__item"><a class="mdl-navigation__link" style="color:black" href="calcharalevel.html">Character Level</a></li>
+                        <li class="mdl-menu__item"><a class="mdl-navigation__link" style="color:black" href="calcharalevel.html">Partner Level</a></li>
                         <li class="mdl-menu__item"><a class="mdl-navigation__link" style="color:black" href="caleventfinish.html">Event Finish Day</a></li>
                     </ul>
                     <a class="mdl-navigation__link" href="blog.html">BLOG</a>
@@ -42,7 +42,7 @@
                 <a class="mdl-navigation__link" href="event.html">Event</a>
                 <div style="height: 1px; background-color: #dcdcdc; margin: 8px 0;"></div>
                 <span class="mdl-navigation__link" style="color: #ff9800;">Calculator</span>
-                <a class="mdl-navigation__link" href="calcharalevel.html">Character Level</a>
+                <a class="mdl-navigation__link" href="calcharalevel.html">Partner Level</a>
                 <a class="mdl-navigation__link" href="caleventfinish.html">Event Finish Day</a>
                 <div style="height: 1px; background-color: #dcdcdc; margin: 8px 0;"></div>
                 <a class="mdl-navigation__link" href="blog.html">Blog</a>
@@ -51,13 +51,176 @@
         <main class="mdl-layout__content">
             <div class="page-content">
                 <!-- Page contect start -->
-                <div style="background-image: url('./img/6YearAnniversary.jpg');
-  background-size: cover; height:680px; padding-top:80px;">
-                </div>
-                <div style="text-align: center;">
-                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-                        Test Button style
-                    </button>
+                <br />
+                <br />
+                <div class="mdl-shadow--4dp" style="width: 450px; text-align: center; margin-left: auto; margin-right: auto;">
+                    <br />
+                    <br />
+                    <span class="mdl-layout-title">Partner Level Calculator</span>
+                    <form action="#">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="score" />
+                            <label class="mdl-textfield__label" for="score">Score</label>
+                            <span class="mdl-textfield__error">Input is not a number!</span>
+                        </div>
+                        <br />
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="constant" />
+                            <label class="mdl-textfield__label" for="constant">Chart Constant</label>
+                            <span class="mdl-textfield__error">Input is not a number!</span>
+                        </div>
+                        <br />
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="charalevel" />
+                            <label class="mdl-textfield__label" for="charalevel">Partner Level</label>
+                            <span class="mdl-textfield__error">Input is not a number!</span>
+                        </div>
+                        <br />
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="targetlevel" />
+                            <label class="mdl-textfield__label" for="targetlevel">Target Level</label>
+                            <span class="mdl-textfield__error">Input is not a number!</span>
+                        </div>
+                    </form>
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="button" onclick="calculateevent()"> Calculate </button>
+                    <br />
+                    <script>
+                        function calculateevent() {
+                            var singelptt = 0;
+                            var exp = 0;
+                            var charaexp = 0;
+                            var totalexp = 0;
+                            var finalexp = 0;
+                            var times = 0;
+                            var score = Number(document.getElementById("score").value);
+                            var constant = Number(document.getElementById("constant").value);
+                            var cl = Number(document.getElementById("charalevel").value);
+                            var tl = Number(document.getElementById("targetlevel").value);
+                            if (score >= 10000000) singelptt = constant + 2;
+                            else if (score > 9800000) singelptt = constant + 1 + (score - 9800000) / 200000;
+                            else singelptt = constant + (score - 9500000) / 300000;
+                            if (singelptt < 0) singelptt = 0;
+
+                            exp = 6 * singelptt;
+
+                            switch (tl) {
+                                case 1: case 2: case 3: case 4: case 5:
+                                    totalexp = 50 * (tl - 1);
+                                    break;
+                                case 6:
+                                    totalexp = 300;
+                                    break;
+                                case 7:
+                                    totalexp = 450;
+                                    break;
+                                case 8:
+                                    totalexp = 650;
+                                    break;
+                                case 9:
+                                    totalexp = 900;
+                                    break;
+                                case 10:
+                                    totalexp = 1200;
+                                    break;
+                                case 11:
+                                    totalexp = 1600;
+                                    break;
+                                case 12:
+                                    totalexp = 2100;
+                                    break;
+                                case 13:
+                                    totalexp = 2700;
+                                    break;
+                                case 14:
+                                    totalexp = 3400;
+                                    break;
+                                case 15:
+                                    totalexp = 4200;
+                                    break;
+                                case 16:
+                                    totalexp = 5100;
+                                    break;
+                                case 17:
+                                    totalexp = 6100;
+                                    break;
+                                case 18:
+                                    totalexp = 7200;
+                                    break;
+                                case 19:
+                                    totalexp = 8500;
+                                    break;
+                                case 20: case 21: case 22: case 23: case 24: case 25: case 26: case 27: case 28: case 29: case 30:
+                                    totalexp = 8500 + (tl - 19) * 1500;
+                                    break;
+                            }
+                            switch (cl) {
+                                case 1: case 2: case 3: case 4: case 5:
+                                    charaexp = 50 * (cl - 1);
+                                    break;
+                                case 6:
+                                    charaexp = 300;
+                                    break;
+                                case 7:
+                                    charaexp = 450;
+                                    break;
+                                case 8:
+                                    charaexp = 650;
+                                    break;
+                                case 9:
+                                    charaexp = 900;
+                                    break;
+                                case 10:
+                                    charaexp = 1200;
+                                    break;
+                                case 11:
+                                    charaexp = 1600;
+                                    break;
+                                case 12:
+                                    charaexp = 2100;
+                                    break;
+                                case 13:
+                                    charaexp = 2700;
+                                    break;
+                                case 14:
+                                    charaexp = 3400;
+                                    break;
+                                case 15:
+                                    charaexp = 4200;
+                                    break;
+                                case 16:
+                                    charaexp = 5100;
+                                    break;
+                                case 17:
+                                    charaexp = 6100;
+                                    break;
+                                case 18:
+                                    charaexp = 7200;
+                                    break;
+                                case 19:
+                                    charaexp = 8500;
+                                    break;
+                                case 20: case 21: case 22: case 23: case 24: case 25: case 26: case 27: case 28: case 29: case 30:
+                                    charaexp = 8500 + (tl - 19) * 1500;
+                                    break;
+                            }
+
+                            finalexp = totalexp - charaexp;
+
+                            times = finalexp / exp;
+
+                            document.getElementById("times").innerHTML = Math.ceil(times);
+                        }
+                    </script>
+                    <div>
+
+                        <br />
+                        <br />
+                        <br />
+                        <span>You need <span id="times">__</span> times play to level up your partner.</span>
+                    </div>
+                    <br />
+                    <br />
+                    <br />
                 </div>
             </div>
         </main>
