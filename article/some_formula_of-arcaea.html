@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" type="image/.png" href="../img/Partner_hikari_fatalis.png" />
+    <link rel="stylesheet" href="../css/icon.css" />
+    <link rel="stylesheet" href="../css/material.orange-amber.min.css" />
+    <script src="../js/material.min.js"></script>
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Arcaea Tools - Blog</title>
+</head>
+<body>
+    <div class="mdl-layout mdl-js-layout">
+        <header class="mdl-layout__header mdl-layout__header--scroll">
+            <div class="mdl-layout__header-row">
+                <span class="mdl-layout-title">Arcaea Tools</span>
+                <div class="mdl-layout-spacer"></div>
+                <!-- Navigation -->
+                <nav class="mdl-navigation mdl-layout--large-screen-only">
+                    <a class="mdl-navigation__link" href="../index.html">HOME</a>
+                    <a class="mdl-navigation__link" href="../event.html">EVENT</a>
+                    <button class="mdl-button mdl-js-button" style="color: #5c4d39" id="more-button"> Calculator </button>
+                    <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button">
+                        <li class="mdl-menu__item"><a class="mdl-navigation__link" style="color:black" href="../calcharalevel.html">Partner Level</a></li>
+                        <li class="mdl-menu__item"><a class="mdl-navigation__link" style="color:black" href="../caleventfinish.html">Event Finish Day</a></li>
+                    </ul>
+                    <a class="mdl-navigation__link" href="../blog.html">BLOG</a>
+                </nav>
+            </div>
+        </header>
+        <!-- Side navigation -->
+        <div class="sidenav-drawer mdl-layout__drawer">
+            <span class="mdl-layout-title">Arcaea Tools</span>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="../index.html">Home</a>
+                <a class="mdl-navigation__link" href="../event.html">Event</a>
+                <div style="height: 1px; background-color: #dcdcdc; margin: 8px 0;"></div>
+                <span class="mdl-navigation__link" style="color: #ff9800;">Calculator</span>
+                <a class="mdl-navigation__link" href="../calcharalevel.html">Partner Level</a>
+                <a class="mdl-navigation__link" href="../caleventfinish.html">Event Finish Day</a>
+                <div style="height: 1px; background-color: #dcdcdc; margin: 8px 0;"></div>
+                <a class="mdl-navigation__link" href="../blog.html">Blog</a>
+            </nav>
+        </div>
+        <main class="mdl-layout__content">
+            <div class="page-content">
+                <!-- Page content start -->
+                <div class="article-head"></div>
+                <div class="article mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
+                    <h3>Some formula of arcaea</h3>
+                    <p>This article will show the formula of singel PTT (Playing Rating), world mode step and PTT. </p>
+                    <h4>Singel PTT (Playing Rating)</h4>
+                    <p>The singel PTT depends on your play score: </p>
+                    <p>When the score >= 10000000(Pure Memory), the singel PTT = Chart Constant + 2 ; </p>
+                    <p>When the score between 9800000 and 9999999, the singel PTT = Chart Constant + 1 + ( score - 9800000 ) / 200000 ;</p>
+                    <p>When the score <= 9800000, the singel PTT = Chart Constant + ( score - 9500000 ) / 300000 ;</p>
+                    <p><i>If you want to check the chart constant, you can go to <a href="https://arcaea.fandom.com/wiki/Songs_by_Chart_Constant" target="_blank">this website</a>.</i></p>
+                    <h4>World mode step</h4>
+                    <p>To calculate the step, you need your singel PTT, that's why I write it at first. The formula is:</p>
+                    <p>Step = ( 2.5 + 2.45√Singel PTT ) * ( Partner Step Stat / 50 )</p>
+                    <h4>PTT</h4>
+                    <p>PTT's value depends on "Best 30" and "Recent 10".</p>
+                    <p>The best 30 means best top 30 singel PTT (Playing Rating) you got, they can't be reduced, and the score can only appear once.</p>
+                    <p>The recent 10 means the best recent 10 singel PTT in recent 30 singel PTT (Playing Rating) you got, they can be reduced, and the score also can only appear once.(This value usually make your PTT change.)</p>
+                    <p>The formula of PTT is:</p>
+                    <p>PTT = ( Best 30 + Recent 10 ) / 40</p>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
