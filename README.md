@@ -9,4 +9,5 @@ Now work in progress:
 - ~~Home page~~( ~~slides~~, ~~news~~, ~~calendar~~)
 - ~~Event page~~(~~event list~~)
 - ~~Calculator page~~(~~Character Level Calculate~~, ~~Event Finish Day Calculate~~)
-- Blog page
+- ~~Blog page~~
+- More articles
